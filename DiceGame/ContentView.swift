@@ -20,6 +20,7 @@ struct ContentView: View {
                     .frame(width: 100, height: 100, alignment: .center)
                     .cornerRadius(3.0)
                     .background(Color.pink)
+                    .cornerRadius(16)
                     .padding()
                     .font(.largeTitle)
                     .rotation3DEffect(
@@ -33,7 +34,7 @@ struct ContentView: View {
                 Button(action: {
                     
                     withAnimation {
-                        self.angle += 360.0
+                        self.angle += 720.0
                         diceValue = diceValues.shuffled()[0]
                     }
                     results.scores.append(diceValue)
@@ -41,7 +42,7 @@ struct ContentView: View {
                     formatter.dateStyle = .short
                     formatter.timeStyle = .long
                     results.currentDate.append(formatter.string(from: Date()))
-                        
+                    
                     
                 }, label: {
                     
@@ -56,7 +57,7 @@ struct ContentView: View {
             .tag(0)
             ResultsView().environmentObject(results)
                 .tabItem {
-                 //   Image(systemName: "history")
+                    Image(systemName: "calendar")
                     Text("Results")
                 }
                 .tag(1)

@@ -9,9 +9,10 @@ import SwiftUI
 
 struct ResultsView: View {
     @EnvironmentObject var results: Result
+    
 
     var body: some View {
-        List(Array(zip(results.scores, results.currentDate)), id: \.self.0) { (ind, date) in
+        List(Array(zip(results.scores, results.currentDate)), id: \.self.1) { (ind, date) in
             VStack {
                 Text("Score: \(ind)")
                     .font(.title)
