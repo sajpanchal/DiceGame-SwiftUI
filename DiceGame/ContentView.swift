@@ -13,7 +13,9 @@ struct ContentView: View {
     @State var angle: Double = 0.0
     @State var selectedTab = 0
     @State var generator = UINotificationFeedbackGenerator()
-    var results = Result()
+   // var results = Result()
+    @FetchRequest(entity: Summary.entity(), sortDescriptors:[]) var results: FetchedResults<Summary>
+    @Environment(\.managedObjectContext) var moc
     var body: some View {
         TabView {
             VStack {
@@ -37,7 +39,7 @@ struct ContentView: View {
                 Text("Play")
             }
             .tag(0)
-            ResultsView().environmentObject(results)
+            ResultsView()/*.environmentObject(results)*/
                 .tabItem {
                     Image(systemName: "calendar")
                     Text("Results")
@@ -54,11 +56,19 @@ struct ContentView: View {
             diceValue = diceValues.shuffled()[0]
             simpleSuccess()
         }
-        results.scores.append(diceValue)
+        let result = Summary(context: self.moc)
+        result.score = Int16(diceValue)
         let formatter = DateFormatter()
         formatter.dateStyle = .short
         formatter.timeStyle = .long
-        results.currentDate.append(formatter.string(from: Date()))
+        result.currentDate = formatter.string(from: Date())
+        try? self.moc.save()
+        
+       /* results.scores.append(diceValue)
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = .long
+        results.currentDate.append(formatter.string(from: Date()))*/
     }
     func simpleSuccess() {
         let generator = UINotificationFeedbackGenerator()

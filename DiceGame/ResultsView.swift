@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct ResultsView: View {
-    @EnvironmentObject var results: Result
+    @FetchRequest(entity: Summary.entity(), sortDescriptors: []) var results: FetchedResults<Summary>
+    @Environment(\.managedObjectContext) var moc
     
 
     var body: some View {

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		721CED0826EBAA62007A572F /* Summary+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721CED0626EBAA62007A572F /* Summary+CoreDataClass.swift */; };
+		721CED0926EBAA62007A572F /* Summary+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721CED0726EBAA62007A572F /* Summary+CoreDataProperties.swift */; };
 		723A374926E9179C008E8061 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723A374826E9179C008E8061 /* AppDelegate.swift */; };
 		723A374B26E9179C008E8061 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723A374A26E9179C008E8061 /* SceneDelegate.swift */; };
 		723A374D26E9179C008E8061 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723A374C26E9179C008E8061 /* ContentView.swift */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		721CED0626EBAA62007A572F /* Summary+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Summary+CoreDataClass.swift"; sourceTree = "<group>"; };
+		721CED0726EBAA62007A572F /* Summary+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Summary+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		723A374526E9179C008E8061 /* DiceGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiceGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		723A374826E9179C008E8061 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		723A374A26E9179C008E8061 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +50,8 @@
 		723A373C26E9179C008E8061 = {
 			isa = PBXGroup;
 			children = (
+				721CED0626EBAA62007A572F /* Summary+CoreDataClass.swift */,
+				721CED0726EBAA62007A572F /* Summary+CoreDataProperties.swift */,
 				723A374726E9179C008E8061 /* DiceGame */,
 				723A374626E9179C008E8061 /* Products */,
 			);
@@ -154,11 +160,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				721CED0926EBAA62007A572F /* Summary+CoreDataProperties.swift in Sources */,
 				723A375026E9179D008E8061 /* DiceGame.xcdatamodeld in Sources */,
 				72EF9A6226EA598F00EBDE92 /* Result.swift in Sources */,
 				723A374926E9179C008E8061 /* AppDelegate.swift in Sources */,
 				723A374B26E9179C008E8061 /* SceneDelegate.swift in Sources */,
 				72EF9A6026EA58CA00EBDE92 /* ResultsView.swift in Sources */,
+				721CED0826EBAA62007A572F /* Summary+CoreDataClass.swift in Sources */,
 				723A374D26E9179C008E8061 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
