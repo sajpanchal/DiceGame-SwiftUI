@@ -8,10 +8,9 @@
 import SwiftUI
 
 struct ResultsView: View {
-    @FetchRequest(entity: Summary.entity(), sortDescriptors: []) var results: FetchedResults<Summary>
+    @FetchRequest(entity: Summary.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Summary.date, ascending: false)]) var results: FetchedResults<Summary>
     @Environment(\.managedObjectContext) var moc
     
-
     var body: some View {
         List(results, id: \.self) { result in
             VStack {

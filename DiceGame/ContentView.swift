@@ -13,9 +13,9 @@ struct ContentView: View {
     @State var angle: Double = 0.0
     @State var selectedTab = 0
     @State var generator = UINotificationFeedbackGenerator()
-   // var results = Result()
     @FetchRequest(entity: Summary.entity(), sortDescriptors:[]) var results: FetchedResults<Summary>
     @Environment(\.managedObjectContext) var moc
+    
     var body: some View {
         TabView {
             VStack {
@@ -50,17 +50,14 @@ struct ContentView: View {
         
         
     }
+    
     func rollDice() {
-      /*  for result in results {
-            try? self.moc.delete(result)
-            print(result)
-            try? self.moc.save()
-        }*/
         withAnimation {
             self.angle += 720.0
             diceValue = diceValues.shuffled()[0]
             simpleSuccess()
         }
+        
        let result = Summary(context: self.moc)
         result.score = Int16(diceValue)
         let formatter = DateFormatter()
@@ -69,12 +66,8 @@ struct ContentView: View {
         result.currentDate = formatter.string(from: Date())
         try? self.moc.save()
         
-       /* results.scores.append(diceValue)
-        let formatter = DateFormatter()
-        formatter.dateStyle = .short
-        formatter.timeStyle = .long
-        results.currentDate.append(formatter.string(from: Date()))*/
     }
+    
     func simpleSuccess() {
         let generator = UINotificationFeedbackGenerator()
         generator.notificationOccurred(.success)
