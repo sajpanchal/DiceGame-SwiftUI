@@ -13,11 +13,11 @@ struct ResultsView: View {
     
 
     var body: some View {
-        List(Array(zip(results.scores, results.currentDate)), id: \.self.1) { (ind, date) in
+        List(results, id: \.self) { result in
             VStack {
-                Text("Score: \(ind)")
+                Text("Score: \(result.score)")
                     .font(.title)
-                Text("\(date)")
+                Text("\(result.currentDate)")
                     .font(.caption)
             }
         }

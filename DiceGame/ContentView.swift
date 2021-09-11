@@ -51,15 +51,20 @@ struct ContentView: View {
         
     }
     func rollDice() {
+      /*  for result in results {
+            try? self.moc.delete(result)
+            print(result)
+            try? self.moc.save()
+        }*/
         withAnimation {
             self.angle += 720.0
             diceValue = diceValues.shuffled()[0]
             simpleSuccess()
         }
-        let result = Summary(context: self.moc)
+       let result = Summary(context: self.moc)
         result.score = Int16(diceValue)
         let formatter = DateFormatter()
-        formatter.dateStyle = .short
+        formatter.dateStyle = .long
         formatter.timeStyle = .long
         result.currentDate = formatter.string(from: Date())
         try? self.moc.save()
